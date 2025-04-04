@@ -73,12 +73,12 @@ void ofApp::update()
 
     // La camera gira intorno alla scena da una distanza maggiore
     float radius = 10000; // La distanza della camera dalla scena
-    float speed = 0.02;   // Velocità di rotazione
+    float speed = 0.05;   // Velocità di rotazione
 
     // Imposta la posizione della camera
-    float camX = 0;                          // radius * sin(time * speed); // Ruota intorno all'asse X
-    float camY = 0;                          // radius * sin(time * speed); // Ruota intorno all'asse Y
-    float camZ = radius * sin(time * speed); // Mantieni una distanza costante lungo l'asse Z
+    float camX = 0;                                  // radius * sin(time * speed); // Ruota intorno all'asse X
+    float camY = radius * sin(time * (speed * 0.5)); // Ruota intorno all'asse Y
+    float camZ = radius * sin(time * speed);         // Mantieni una distanza costante lungo l'asse Z
 
     cam.setPosition(camX, camY, camZ); // Imposta la posizione della camera
     cam.lookAt(ofVec3f(0, 0, 0));
